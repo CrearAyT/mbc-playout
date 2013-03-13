@@ -1,3 +1,5 @@
+NODE=$(shell which node nodejs)
+
 all: update serve
 
 mos: locale/es/LC_MESSAGES/messages.mo
@@ -25,6 +27,6 @@ npm:
 update: submodules npm mos
 
 serve:
-	node server.js
+	${NODE} server.js
 
 .PHONY: npm submodules serve sparkmd5 bootstrap
